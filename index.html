@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Samschanneledit by andrew097</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Samschanneledit</h1>
+        <h2>Sort your Samsung TV channels in your PC.</h2>
+        <a href="https://github.com/andrew097/samschanneledit" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>SamsChannelEditor</h1>
+
+<p>SamsChannelEditor is a desktop application for editing a channel list from your Samsung TV. Now sorting channels should be much easier.</p>
+
+<ul>
+<li>Support Samsung C and D Series.</li>
+<li>Works with scm files directly.</li>
+<li>Support for multiple channels configurations:
+
+<ul>
+<li>map-AirD</li>
+<li>map-AirA</li>
+<li>map-CableD</li>
+<li>map-CableA</li>
+<li>map-SateD</li>
+<li>map-CDTVVD</li>
+<li>AstraHDPlusD</li>
+</ul>
+</li>
+<li>Support for configuration files (read-only)
+
+<ul>
+<li>CloneInfo</li>
+<li>SatDataBase</li>
+</ul>
+</li>
+<li>Easy to use: Just drag &amp; drop channels.</li>
+</ul><h2>Installation</h2>
+
+<p>There's no setup file, just download de binaries and execute the samschanneleditor.exe file. All files are avaiable here.</p>
+
+<p>This application is written in C# so you need the .Net framework 2.0 (or newer) to be installed on your computer.
+You can download here : <a href="http://msdn.microsoft.com/en-us/netframework">.NET Framework</a></p>
+
+<h2>Bad file size error</h2>
+
+<p>Since version 0.9 you can define new sizes in SamsChannelEditor.exe.config. Just open with a text editor like notepad and add a new size for your file in section.</p>
+
+<p>key: starts with "fs_" and after comes the channel file name (without "-" after map) value: is a number list separated by commas. Each number specifies a possible record size.</p>
+
+<p>To calculate your record size:</p>
+
+<ul>
+<li>change extension .scm to .zip</li>
+<li>Extract all files.</li>
+<li>Select file you are opening and look the size in file properties.</li>
+<li>record size is a 1000 multiple (divide your size by 1000 or 2000)</li>
+</ul><h3>Example:</h3>
+
+<div class="highlight"><pre><span class="nt">&lt;appSettings&gt;</span> 
+   <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">"fs_default"</span> <span class="na">value=</span><span class="s">"292,320"</span> <span class="nt">/&gt;</span> 
+   <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">"fs_mapAirA"</span> <span class="na">value=</span><span class="s">"40,64"</span> <span class="nt">/&gt;</span> 
+   <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">"fs_mapCableA"</span> <span class="na">value=</span><span class="s">"40,64"</span> <span class="nt">/&gt;</span> 
+   <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">"fs_mapSateD"</span> <span class="na">value=</span><span class="s">"168,172,194"</span> <span class="nt">/&gt;</span> 
+   <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">"fs_mapAstraHDPlusD"</span> <span class="na">value=</span><span class="s">"212"</span> <span class="nt">/&gt;</span> 
+<span class="nt">&lt;/appSettings&gt;</span>
+</pre></div>
+
+<h2>Libraries &amp; Resources used</h2>
+
+<p><a href="http://www.icsharpcode.net/opensource/sharpziplib">#ziplib</a><br><a href="http://logging.apache.org/log4net">log4net</a><br><a href="http://www.axialis.com/free/icons">Free Icons by Axialis Software</a>  </p>
+
+<h2>License</h2>
+
+<pre><code>Copyright (C) 2011  Ivan Masmitjà Dagas
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+</code></pre>
+
+<h2>Last changelog</h2>
+
+<h3>Version 0.11</h3>
+
+<ul>
+<li>Fixed channel names output. Names in Russian output correctly. Other languages must do so</li>
+<li>Channel data edit feature realized. You can edit channel name and favourites.</li>
+</ul><h3>Version 0.10</h3>
+
+<ul>
+<li>Applied a patch created by Andreas Winter to save sort order to file and restore after.</li>
+<li>Applied a patch created by Andreas Mayer to remove encrypted channels.</li>
+</ul><h3>Version 0.9</h3>
+
+<ul>
+<li>Moved record sizes to SamsChannelEditor.exe.config. Now are easy to add new record sizes for new models.</li>
+</ul><h3>Version 0.8</h3>
+
+<ul>
+<li>BUG [3468470] : Open map-SateD 144bytes length (LE37C670)</li>
+<li>MoveTo problems detected when out of range number is introduced.</li>
+</ul><h3>Version 0.7</h3>
+
+<ul>
+<li>Works on D Series</li>
+<li>Drag and Drop with auto scroll</li>
+<li>Added support for analog channels map-AirA and map-CableA</li>
+<li>Context menu: MoveTo</li>
+<li>Context menu: Renumber All</li>
+</ul>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/andrew097/samschanneledit/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/andrew097/samschanneledit/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/andrew097/samschanneledit"></a> is maintained by <a href="https://github.com/andrew097">andrew097</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
